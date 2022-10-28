@@ -1,9 +1,9 @@
 import sys
 
 # from data_structures.Stack import Stack
-from data_structures.LinkedList import LinkedList
+from data_structures.HashMap import HashMap
 
-
+# IO
 sys.stdin = open("io/in.txt", "r")
 sys.stdout = open("io/out.txt", "w")
 
@@ -31,18 +31,11 @@ def subsets(n, items):
 
 
 def main():
-    t = int(input())
-    for _ in range(t):
-        n = int(input())
-        ll = LinkedList()
-        for _ in range(n):
-            ll.insert_end(input())
-        print(ll)
-        ll.delete_at(1)
-        ll.insert_at(0, "astra")
-        ll.insert_at(n - 1, "viper")
-        print(ll)
-        print()
+    hm = HashMap()
+    hm["chamber"] = "sentinel"
+    hm["reyna"] = "duelist"
+
+    print(hm["reyna"])
 
 
 main()

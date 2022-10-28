@@ -1,6 +1,1 @@
-[chamber -> omen -> reyna -> None ]
-[astra -> chamber -> viper -> reyna -> None ]
-
-[yoru -> neon -> None ]
-[astra -> viper -> yoru -> None ]
-
+duelist
