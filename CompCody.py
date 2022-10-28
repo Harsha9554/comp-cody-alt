@@ -1,7 +1,8 @@
 import sys
 
-# from data_structures.Stack import Stack
-from data_structures.HashMap import HashMap
+from data_structures.Queue import Queue
+
+# from data_structures.HashMap import HashMap
 
 # IO
 sys.stdin = open("io/in.txt", "r")
@@ -31,11 +32,11 @@ def subsets(n, items):
 
 
 def main():
-    hm = HashMap()
-    hm["chamber"] = "sentinel"
-    hm["reyna"] = "duelist"
-
-    print(hm["reyna"])
+    q = Queue()
+    q.enqueue_item("chamber")
+    q.enqueue_item("harbor")
+    q.enqueue_item("reyne")
+    print(q)
 
 
 main()
