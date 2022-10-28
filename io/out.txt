@@ -1,1 +1,15 @@
-[reyne, harbor, chamber]
+agents
++- sentinels
+|  +- chamber
+|  |  +- male
+|  |  +- france
+|  +- sage
+|  +- cypher
++- duelists
+|  +- reyna
+|  +- phoenix
+|  +- yoru
++- initiators
+   +- fade
+   +- sova
+   +- breach

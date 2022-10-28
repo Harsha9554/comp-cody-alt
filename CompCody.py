@@ -1,8 +1,9 @@
 import sys
 
-from data_structures.Queue import Queue
 
+# from data_structures.Queue import Queue
 # from data_structures.HashMap import HashMap
+from data_structures.Trees.TreeNode import TreeNode, print_pretty
 
 # IO
 sys.stdin = open("io/in.txt", "r")
@@ -32,11 +33,33 @@ def subsets(n, items):
 
 
 def main():
-    q = Queue()
-    q.enqueue_item("chamber")
-    q.enqueue_item("harbor")
-    q.enqueue_item("reyne")
-    print(q)
+    root = TreeNode("agents")
+
+    sentinels = TreeNode("sentinels")
+
+    chamber = TreeNode("chamber")
+    chamber.add_child(TreeNode("male"))
+    chamber.add_child(TreeNode("france"))
+
+    sentinels.add_child(chamber)
+    sentinels.add_child(TreeNode("sage"))
+    sentinels.add_child(TreeNode("cypher"))
+
+    duelists = TreeNode("duelists")
+    duelists.add_child(TreeNode("reyna"))
+    duelists.add_child(TreeNode("phoenix"))
+    duelists.add_child(TreeNode("yoru"))
+
+    initiators = TreeNode("initiators")
+    initiators.add_child(TreeNode("fade"))
+    initiators.add_child(TreeNode("sova"))
+    initiators.add_child(TreeNode("breach"))
+
+    root.add_child(sentinels)
+    root.add_child(duelists)
+    root.add_child(initiators)
+
+    print_pretty(root)
 
 
 main()
