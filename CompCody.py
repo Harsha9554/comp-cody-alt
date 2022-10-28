@@ -1,5 +1,8 @@
 import sys
-from data_structures.Stack import Stack
+
+# from data_structures.Stack import Stack
+from data_structures.LinkedList import LinkedList
+
 
 sys.stdin = open("io/in.txt", "r")
 sys.stdout = open("io/out.txt", "w")
@@ -31,15 +34,15 @@ def main():
     t = int(input())
     for _ in range(t):
         n = int(input())
-        stack = Stack()
+        ll = LinkedList()
         for _ in range(n):
-            stack.push_item(input())
-        print(stack)
-        stack.pop_item()
-        print(stack)
-        stack.push_item("harbor")
-        print(stack)
-        print(stack.size())
+            ll.insert_end(input())
+        print(ll)
+        ll.delete_at(1)
+        ll.insert_at(0, "astra")
+        ll.insert_at(n - 1, "viper")
+        print(ll)
+        print()
 
 
 main()
