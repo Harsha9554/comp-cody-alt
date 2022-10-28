@@ -17,7 +17,7 @@ class LinkedList:
             while itr:
                 temp += str(itr.data) + " -> "
                 itr = itr.next
-            temp += "None ]"
+            temp += "None]"
             return temp
 
     def insert_first(self, data):
