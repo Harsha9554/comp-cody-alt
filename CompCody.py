@@ -3,7 +3,7 @@ import sys
 
 # from data_structures.Queue import Queue
 # from data_structures.HashMap import HashMap
-from data_structures.Trees.TreeNode import TreeNode
+from data_structures.Trees.BinarySearchTreeNode import BinarySearchTreeNode, build_tree
 
 # IO
 sys.stdin = open("io/in.txt", "r")
@@ -33,33 +33,9 @@ def subsets(n, items):
 
 
 def main():
-    root = TreeNode("agents")
-
-    sentinels = TreeNode("sentinels")
-
-    chamber = TreeNode("chamber")
-    chamber.add_child(TreeNode("male"))
-    chamber.add_child(TreeNode("france"))
-
-    sentinels.add_child(chamber)
-    sentinels.add_child(TreeNode("sage"))
-    sentinels.add_child(TreeNode("cypher"))
-
-    duelists = TreeNode("duelists")
-    duelists.add_child(TreeNode("reyna"))
-    duelists.add_child(TreeNode("phoenix"))
-    duelists.add_child(TreeNode("yoru"))
-
-    initiators = TreeNode("initiators")
-    initiators.add_child(TreeNode("fade"))
-    initiators.add_child(TreeNode("sova"))
-    initiators.add_child(TreeNode("breach"))
-
-    root.add_child(sentinels)
-    root.add_child(duelists)
-    root.add_child(initiators)
-
-    root.print_tree()
+    agents = ["chamber", "reyna", "yoru", "nice"]
+    bst = build_tree(agents)
+    print(bst.in_order())
 
 
 main()

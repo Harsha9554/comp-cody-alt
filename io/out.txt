@@ -1,15 +1,1 @@
-agents
-   |__sentinels
-      |__chamber
-         |__male
-         |__france
-      |__sage
-      |__cypher
-   |__duelists
-      |__reyna
-      |__phoenix
-      |__yoru
-   |__initiators
-      |__fade
-      |__sova
-      |__breach
+['chamber', 'nice', 'reyna', 'yoru']
