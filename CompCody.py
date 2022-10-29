@@ -1,6 +1,5 @@
 import sys
 
-
 # from data_structures.Queue import Queue
 # from data_structures.HashMap import HashMap
 from data_structures.Trees.BinarySearchTreeNode import BinarySearchTreeNode, build_tree
@@ -32,10 +31,18 @@ def subsets(n, items):
     return res
 
 
+def partially_old(n, a):
+    flag = 0
+    for i in range(1, n - 1):
+        if a[i - 1] < a[i] > a[i + 1]:
+            flag = 1
+            return i + 1
+    if not flag:
+        return -1
+
+
 def main():
-    agents = ["chamber", "reyna", "yoru", "nice"]
-    bst = build_tree(agents)
-    print(bst.in_order())
+    pass
 
 
 main()

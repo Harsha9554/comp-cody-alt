@@ -1,3 +1,6 @@
+from queue import Queue
+
+
 class BinarySearchTreeNode:
     def __init__(self, data):
         self.data = data
@@ -48,10 +51,22 @@ class BinarySearchTreeNode:
 
         return items
 
-    def get_level(self):
+    # [x]: Implement get level of a node from the root of BST.
+    def get_level(self, data, level=1):
+        if self.data == data:
+            return level
+
+        if data < self.data:
+            return self.left.get_level(data, level + 1)
+        else:
+            return self.right.get_level(data, level + 1)
+
+    # [ ]: Implement pretty print for a BST.
+    def print_tree(self):
         pass
 
-    def print_tree(self):
+    # [ ]: Implement max depth for a BST.
+    def max_depth(self):
         pass
 
     def find_max(self):
@@ -64,24 +79,9 @@ class BinarySearchTreeNode:
             return self.data
         return self.left.find_min()
 
-    # def delete(self, data):
-    #     if data < self.data:
-    #         if self.left:
-    #             self.left.delete(data)
-
-    #     if data > self.data:
-    #         if self.right:
-    #             self.right.delete(data)
-
-    #     else:
-    #         if self.left is None and self.right is None:
-    #             return None
-    #         if self.left is None:
-    #             return self.right
-    #         if self.right is None:
-    #             return self.left
-
-    #         min_val = self.right.find_min()
+    # [ ]: Implement Node deletion in BST
+    def delete(self, data):
+        pass
 
 
 def build_tree(items):
