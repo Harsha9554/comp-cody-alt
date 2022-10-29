@@ -3,7 +3,7 @@ import sys
 
 # from data_structures.Queue import Queue
 # from data_structures.HashMap import HashMap
-from data_structures.Trees.TreeNode import TreeNode, print_pretty
+from data_structures.Trees.TreeNode import TreeNode
 
 # IO
 sys.stdin = open("io/in.txt", "r")
@@ -59,7 +59,7 @@ def main():
     root.add_child(duelists)
     root.add_child(initiators)
 
-    print_pretty(root)
+    root.print_tree()
 
 
 main()

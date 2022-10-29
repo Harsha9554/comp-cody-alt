@@ -8,19 +8,35 @@ class TreeNode:
         child.parent = self
         self.children.append(child)
 
+    def get_level(self):
+        level = 0
+        p = self.parent
+        while p:
+            level += 1
+            p = p.parent
 
-def print_pretty(root, marker_str="+- ", level_markers=[]):
-    emptry_str = " " * len(marker_str)
+        return level
 
-    connection_str = "|" + emptry_str[:-1]
+    def print_tree(self):
+        spaces = " " * self.get_level() * 3
+        prefix = spaces + "|__" if self.parent else ""
+        print(prefix + self.data)
+        if self.children:
+            for child in self.children:
+                child.print_tree()
 
-    level = len(level_markers)
+    def print_pretty(self, marker_str="+- ", level_markers=[]):
+        emptry_str = " " * len(marker_str)
 
-    mapper = lambda draw: connection_str if draw else emptry_str
-    markers = "".join(map(mapper, level_markers[:-1]))
-    markers += marker_str if level > 0 else ""
-    print(f"{markers}{root.data}")
+        connection_str = "|" + emptry_str[:-1]
 
-    for i, child in enumerate(root.children):
-        is_last = i == len(root.children) - 1
-        print_pretty(child, marker_str, [*level_markers, not is_last])
+        level = len(level_markers)
+
+        mapper = lambda draw: connection_str if draw else emptry_str
+        markers = "".join(map(mapper, level_markers[:-1]))
+        markers += marker_str if level > 0 else ""
+        print(f"{markers}{self.data}")
+
+        for i, child in enumerate(self.children):
+            is_last = i == len(self.children) - 1
+            child.print_pretty(marker_str, [*level_markers, not is_last])
