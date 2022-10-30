@@ -2,11 +2,16 @@ import sys
 
 # from data_structures.Queue import Queue
 # from data_structures.HashMap import HashMap
-from data_structures.Trees.BinarySearchTreeNode import BinarySearchTreeNode, build_tree
+from data_structures.Trees.BinarySearchTreeNode import max_depth, build_tree
 
 # IO
 sys.stdin = open("io/in.txt", "r")
-sys.stdout = open("io/out.txt", "w")
+
+
+#   5
+#  4 8
+# 3 6 10
+# 2
 
 
 def generate_bin(n, i, s, bin_nums):
@@ -42,7 +47,9 @@ def partially_old(n, a):
 
 
 def main():
-    pass
+    a = list(map(int, input().split()))
+    bst = build_tree(a)
+    print(max_depth(bst))
 
 
 main()

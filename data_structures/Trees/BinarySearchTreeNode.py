@@ -65,10 +65,6 @@ class BinarySearchTreeNode:
     def print_tree(self):
         pass
 
-    # [ ]: Implement max depth for a BST.
-    def max_depth(self):
-        pass
-
     def find_max(self):
         if self.right is None:
             return self.data
@@ -91,3 +87,10 @@ def build_tree(items):
         root.add_child(items[i])
 
     return root
+
+
+# [x]: Implement max depth for a BST.
+def max_depth(node):
+    if not node:
+        return 0
+    return 1 + max(max_depth(node.left), max_depth(node.right))
