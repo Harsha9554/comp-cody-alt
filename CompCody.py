@@ -2,54 +2,50 @@ import sys
 
 # from data_structures.Queue import Queue
 # from data_structures.HashMap import HashMap
-from data_structures.Trees.BinarySearchTreeNode import max_depth, build_tree
+from data_structures.Trees.BinarySearchTree import BinarySearchTree
+
 
 # IO
 sys.stdin = open("io/in.txt", "r")
-
-
-#   5
-#  4 8
-# 3 6 10
-# 2
-
-
-def generate_bin(n, i, s, bin_nums):
-    if i == n:
-        bin_nums.append(s)
-    else:
-        generate_bin(n, i + 1, s + "0", bin_nums)
-        generate_bin(n, i + 1, s + "1", bin_nums)
-
-
-def subsets(n, items):
-    bin_nums = []
-    res = []
-
-    generate_bin(n, 0, "", bin_nums)
-    for x in bin_nums:
-        temp = []
-        for i in range(n):
-            if x[i] == "1":
-                temp.append(items[i])
-        res.append(temp)
-    return res
-
-
-def partially_old(n, a):
-    flag = 0
-    for i in range(1, n - 1):
-        if a[i - 1] < a[i] > a[i + 1]:
-            flag = 1
-            return i + 1
-    if not flag:
-        return -1
+sys.stdout = open("io/out.txt", "w")
 
 
 def main():
-    a = list(map(int, input().split()))
-    bst = build_tree(a)
-    print(max_depth(bst))
+    tree = BinarySearchTree()
+    tree.insert(10)
+    tree.insert(12)
+    tree.insert(5)
+    tree.insert(4)
+    tree.insert(20)
+    tree.insert(8)
+    tree.insert(7)
+    tree.insert(15)
+    tree.insert(13)
+    print(tree.search(1))
+    print(tree.search(12))
+
+    """ Following tree is getting created:
+                    10
+                 /      \
+               5         12
+              / \           \
+            4     8          20
+                 /          /
+                7         15
+                         /
+                       13
+    """
+
+    # tree.in_order()
+    # print("\n\nAfter deleting 20")
+    # tree.delete(20)
+    tree.in_order()
+    # print("\n\nAfter deleting 10")
+    # tree.delete(10)
+    tree.in_order()
+    print()
+    print()
+    print("max-depth: ", tree.max_depth())
 
 
 main()

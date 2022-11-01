@@ -1,1 +1,9 @@
-5
+False
+True
+
+In-Order: 
+4 5 7 8 10 12 13 15 20 
+In-Order: 
+4 5 7 8 10 12 13 15 20 
+
+max-depth:  5
